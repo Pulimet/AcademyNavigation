@@ -14,7 +14,8 @@ class DbModule(private val context: Context) {
 
     @Provides
     @Singleton
-    fun getRoomDb(): MovieDatabase = Room.databaseBuilder(context, MovieDatabase::class.java, "movies_database").build()
+    fun getRoomDb(): MovieDatabase =
+        Room.databaseBuilder(context, MovieDatabase::class.java, "movies_database").build()
 
     @Provides
     @Singleton

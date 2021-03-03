@@ -3,7 +3,6 @@ package com.academy.ui_favorites.recycler
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.academy.db.model.Movie
 import com.academy.db.model.MovieFavorite
 import com.academy.ui_favorites.R
 

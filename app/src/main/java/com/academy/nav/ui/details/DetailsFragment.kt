@@ -17,7 +17,7 @@ import javax.inject.Inject
 class DetailsFragment : Fragment(R.layout.fragment_details), View.OnClickListener {
     @Inject
     internal lateinit var detailsViewModelFactory: DetailsViewModelFactory
-    private val viewModel: DetailsViewModel by viewModels{detailsViewModelFactory}
+    private val viewModel: DetailsViewModel by viewModels { detailsViewModelFactory }
 
     private val args: DetailsFragmentArgs by navArgs()
 

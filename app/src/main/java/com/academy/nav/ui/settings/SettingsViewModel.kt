@@ -2,10 +2,10 @@ package com.academy.nav.ui.settings
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
-import com.academy.nav.di.Injector
-import com.academy.nav.repo.SettingsRepo
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
+import com.academy.nav.di.Injector
+import com.academy.nav.repo.SettingsRepo
 import kotlinx.coroutines.launch
 
 class SettingsViewModel(private val settingsRepo: SettingsRepo) : ViewModel() {

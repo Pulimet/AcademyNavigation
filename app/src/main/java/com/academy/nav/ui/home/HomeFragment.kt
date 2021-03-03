@@ -12,8 +12,8 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.academy.db.model.Movie
 import com.academy.nav.R
-import com.academy.nav.di.Injector
 import com.academy.nav.databinding.FragmentHomeBinding
+import com.academy.nav.di.Injector
 import com.academy.nav.ui.binding.FragmentBinding
 import com.academy.nav.ui.home.recycler.HomeAdapter
 import com.academy.nav.ui.home.recycler.OnMovieClickListener
@@ -25,7 +25,7 @@ import javax.inject.Inject
 class HomeFragment : Fragment(R.layout.fragment_home), OnMovieClickListener {
     @Inject
     internal lateinit var homeViewModelFactory: HomeViewModelFactory
-    private val viewModel: HomeViewModel by viewModels{homeViewModelFactory}
+    private val viewModel: HomeViewModel by viewModels { homeViewModelFactory }
 
     private val navViewModel: NavigationViewModel by activityViewModels()
 

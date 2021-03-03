@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import com.academy.db.dao.MovieFavoriteDao
+import com.academy.ui_favorites.di.DiHolder
 
 class FavoritesViewModel (private val favoritesRepo: FavoritesRepo) : ViewModel() {
     init {
@@ -14,6 +15,7 @@ class FavoritesViewModel (private val favoritesRepo: FavoritesRepo) : ViewModel(
 
     override fun onCleared() {
         favoritesRepo.onCleared()
+        DiHolder.favoritesInjector.clearFavoritesComponent()
         Log.w("Academy", "FavoritesViewModel onCleared")
     }
 }

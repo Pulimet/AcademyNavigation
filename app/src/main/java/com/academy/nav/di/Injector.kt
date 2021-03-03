@@ -5,14 +5,16 @@ import com.academy.db.di.DbModule
 import com.academy.nav.di.components.AppComponent
 import com.academy.nav.di.components.DaggerAppComponent
 import com.academy.nav.di.components.SettingsComponent
-import com.academy.nav.di.modules.*
-import com.academy.navigation.BaseInjector
-import com.academy.navigation.DiHolder
+import com.academy.nav.di.modules.DataStoreModule
+import com.academy.nav.di.modules.MoviesModule
+import com.academy.nav.di.modules.SettingsModule
 import com.academy.network.di.NetworkModule
+import com.academy.ui_favorites.di.DiHolder
 import com.academy.ui_favorites.di.FavoritesComponent
+import com.academy.ui_favorites.di.FavoritesInjector
 import com.academy.ui_favorites.di.FavoritesModule
 
-object Injector: BaseInjector {
+object Injector : FavoritesInjector {
     lateinit var appComponent: AppComponent
 
     private var settingsComponent: SettingsComponent? = null
@@ -20,10 +22,10 @@ object Injector: BaseInjector {
     private lateinit var appContext: Context
 
     init {
-        DiHolder.baseInjector = this
+        DiHolder.favoritesInjector = this
     }
 
-    fun buildDaggerAppComponent(applicationContext: Context){
+    fun buildDaggerAppComponent(applicationContext: Context) {
         appContext = applicationContext
         appComponent = DaggerAppComponent.builder()
             .moviesModule(MoviesModule())

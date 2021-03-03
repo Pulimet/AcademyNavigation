@@ -5,10 +5,10 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.academy.nav.R
-import com.academy.nav.di.Injector
-import javax.inject.Inject
 import com.academy.nav.databinding.FragmentSettingsBinding
+import com.academy.nav.di.Injector
 import com.academy.nav.ui.binding.FragmentBinding
+import javax.inject.Inject
 
 class SettingsFragment : Fragment(R.layout.fragment_settings), View.OnClickListener {
     @Inject

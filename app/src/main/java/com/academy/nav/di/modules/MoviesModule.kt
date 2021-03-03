@@ -23,7 +23,7 @@ class MoviesModule {
         tmdbApiService: TmdbApiService,
         @Named("Votes") dataStoreVotes: DataStore<Preferences>,
         @Named("Rating") dataStoreRating: DataStore<Preferences>
-    ) = MoviesRepo(movieDao, movieFavoriteDao,  tmdbApiService, dataStoreVotes, dataStoreRating)
+    ) = MoviesRepo(movieDao, movieFavoriteDao, tmdbApiService, dataStoreVotes, dataStoreRating)
 
     @Provides
     @Singleton

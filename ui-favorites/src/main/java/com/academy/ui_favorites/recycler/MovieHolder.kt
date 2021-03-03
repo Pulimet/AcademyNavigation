@@ -4,7 +4,6 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.size.Scale
-import com.academy.db.model.Movie
 import com.academy.db.model.MovieFavorite
 import com.academy.ui_favorites.databinding.ItemMovieBinding
 
