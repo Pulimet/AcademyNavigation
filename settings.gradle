@@ -1,0 +1,2 @@
+include ':app', ':network', ':db', ':navigation', ':ui-favorites'
+rootProject.name = "Academy Navigation"
