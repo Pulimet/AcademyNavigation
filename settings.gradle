@@ -1,2 +1,2 @@
-include ':app', ':network', ':db', ':navigation', ':ui-favorites'
+include ':app', ':network', ':db', ':ui-favorites'
 rootProject.name = "Academy Navigation"

@@ -49,6 +49,9 @@ class MoviesRepo constructor(
         it
     }
 
+    fun getMovie(movieId: Int): Flow<Movie> =
+        movieDao.getMovie(movieId)
+
     private suspend fun ifFirstTimeOrSettingsChangedFetchFreshMovies(it: List<Movie>) {
         Log.d("Academy", "onMoviesFlowCollection, size: ${it.size}")
         val minNumOfVotes = getTempMinValue().first()

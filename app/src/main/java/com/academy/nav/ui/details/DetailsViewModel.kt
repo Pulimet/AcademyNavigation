@@ -14,6 +14,9 @@ class DetailsViewModel(private val moviesRepo: MoviesRepo) : ViewModel() {
 
     private var isMovieInFavorites = false
 
+    fun getMovie(movieId: Int): LiveData<Movie> =
+        moviesRepo.getMovie(movieId).asLiveData()
+
     fun getMovieFromFavorites(movieId: Int): LiveData<Boolean> =
         moviesRepo.getMovieFromFavorites(movieId)
             .map { movieFavorite: MovieFavorite? ->
@@ -21,9 +24,9 @@ class DetailsViewModel(private val moviesRepo: MoviesRepo) : ViewModel() {
                 isMovieInFavorites
             }.asLiveData()
 
-    fun onFavoriteImageClick(movieId: Movie) {
+    fun onFavoriteImageClick(movie: Movie) {
         viewModelScope.launch {
-            moviesRepo.addOrRemoveMovieFromFavorites(movieId, isMovieInFavorites)
+            moviesRepo.addOrRemoveMovieFromFavorites(movie, isMovieInFavorites)
         }
     }
 }

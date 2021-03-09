@@ -2,26 +2,25 @@ package com.academy.nav.ui.navigation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import androidx.navigation.fragment.FragmentNavigator
 import com.academy.db.model.Movie
-import com.academy.nav.ui.home.HomeFragmentDirections
 import com.academy.nav.utils.SingleLiveEvent
 
 class NavigationViewModel : ViewModel() {
+
     private var navEvent = SingleLiveEvent<NavParams>()
     fun getNavEvent(): LiveData<NavParams> = navEvent
 
     // HomeFragment Actions
-    fun onUserMovieClick(movie: Movie, extras: FragmentNavigator.Extras) {
+    fun onUserMovieClick(movie: Movie) {
         navEvent.value =
-            NavParams(HomeFragmentDirections.actionHomeFragmentToDetailsFragment(movie), extras)
+            NavParams(Destination.DETAILS, movie)
     }
 
     fun onSettingsClick() {
-        navEvent.value = NavParams(HomeFragmentDirections.actionHomeFragmentToSettingsFragment())
+        navEvent.value = NavParams(Destination.SETTINGS)
     }
 
     fun onFavoritesClick() {
-        navEvent.value = NavParams(HomeFragmentDirections.actionGlobalFavorites())
+        navEvent.value = NavParams(Destination.FAVORITES)
     }
 }

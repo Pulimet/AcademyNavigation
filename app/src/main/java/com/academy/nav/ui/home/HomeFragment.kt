@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.FragmentNavigator
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.academy.db.model.Movie
@@ -86,9 +85,9 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnMovieClickListener {
     }
 
     // OnMovieClickListener
-    override fun onClick(movie: Movie, extras: FragmentNavigator.Extras, position: Int) {
+    override fun onClick(movie: Movie, position: Int) {
         viewModel.saveClickedItemPosition(position)
-        navViewModel.onUserMovieClick(movie, extras)
+        navViewModel.onUserMovieClick(movie)
     }
 
     // Menu

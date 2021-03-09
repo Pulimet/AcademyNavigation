@@ -2,7 +2,6 @@ package com.academy.nav.ui.home.recycler
 
 import android.view.View
 import androidx.core.view.ViewCompat
-import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.size.Scale
@@ -49,10 +48,7 @@ class MovieHolder(v: View, private val listener: OnMovieClickListener) :
     // View.OnClickListener
     override fun onClick(v: View?) {
         if (adapterPosition != RecyclerView.NO_POSITION) {
-            val extras = FragmentNavigatorExtras(
-                binding.imgMovie to "image_${movie?.id}"
-            )
-            movie?.let { listener.onClick(it, extras, adapterPosition) }
+            movie?.let { listener.onClick(it, adapterPosition) }
         }
     }
 }
