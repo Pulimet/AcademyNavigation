@@ -8,7 +8,6 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import androidx.transition.TransitionInflater
 import coil.load
-import com.academy.db.model.Movie
 import com.academy.nav.R
 import com.academy.nav.databinding.FragmentDetailsBinding
 import com.academy.nav.di.Injector
