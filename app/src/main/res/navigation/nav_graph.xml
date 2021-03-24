@@ -1,27 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.academy.nav.ui.home.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
-    <fragment
-        android:id="@+id/detailsFragment"
-        android:name="com.academy.nav.ui.details.DetailsFragment"
-        android:label="fragment_details"
-        tools:layout="@layout/fragment_details" />
-    <fragment
-        android:id="@+id/settingsFragment"
-        android:name="com.academy.nav.ui.settings.SettingsFragment"
-        android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" />
-    <fragment
-        android:id="@+id/favoritesFragment"
-        android:name="com.academy.ui_favorites.FavoritesFragment"
-        android:label="FavoritesFragment" />
+     <!--TODO Step 3 - Add all 4 fragments (HomeFragment, DetailsFragment, SettingsFragment, FavoritesFragment)-->
+     <!--TODO Step 4 - Mark HomeFragment as starting destination -->
 </navigation>
