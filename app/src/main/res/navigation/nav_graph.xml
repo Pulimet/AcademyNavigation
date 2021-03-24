@@ -8,20 +8,35 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.academy.nav.ui.home.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        android:label="@string/fragment_title_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_favoritesFragment"
+            app:destination="@id/favoritesFragment" />
+    </fragment>
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.academy.nav.ui.details.DetailsFragment"
-        android:label="fragment_details"
-        tools:layout="@layout/fragment_details" />
+        android:label="@string/fragment_title_details"
+        tools:layout="@layout/fragment_details">
+        <argument
+            android:name="movie"
+            app:argType="com.academy.db.model.Movie" />
+    </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.academy.nav.ui.settings.SettingsFragment"
-        android:label="fragment_settings"
+        android:label="@string/fragment_title_settings"
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/favoritesFragment"
         android:name="com.academy.ui_favorites.FavoritesFragment"
-        android:label="FavoritesFragment" />
+        android:label="@string/fragment_title_favorites"
+        tools:layout="@layout/fragment_favorites" />
 </navigation>

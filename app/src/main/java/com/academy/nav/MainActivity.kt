@@ -16,13 +16,13 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     override fun onStart() {
         super.onStart()
         navController = findNavController(R.id.fragment_container_view)
-
+        NavigationUI.setupActionBarWithNavController(this, navController)
         navViewModel.getNavEvent().observe(this) {
-            when (it.destination) {
-                Destination.DETAILS -> navController.navigate(R.id.detailsFragment, bundleOf("movieId" to it.movie?.id))
-                Destination.SETTINGS -> navController.navigate(R.id.settingsFragment)
-                Destination.FAVORITES -> navController.navigate(R.id.favoritesFragment)
-            }
+            navController.navigate(it.navDirections, it.extras)
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
     }
 }

@@ -13,6 +13,7 @@
     <string name="fragment_title_home">Home</string>
     <string name="fragment_title_details">Movie Details</string>
     <string name="fragment_title_settings">Settings</string>
+    <string name="fragment_title_favorites">Favorites</string>
 
     <!-- Settings Fragment-->
     <string name="minimum_votes">Minimum votes:</string>
