@@ -10,25 +10,15 @@
         android:name="com.academy.nav.ui.home.HomeFragment"
         android:label="@string/fragment_title_home"
         tools:layout="@layout/fragment_home">
-        <action
-            android:id="@+id/action_homeFragment_to_detailsFragment"
-            app:destination="@id/detailsFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_settingsFragment"
-            app:destination="@id/settingsFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
-        <action
-            android:id="@+id/action_homeFragment_to_favoritesFragment"
-            app:destination="@id/favoritesFragment" />
+        <!-- TODO Step 4 - Add 3 actions from HomeFragment to Details, Settings and Favorites-->
+        <!-- TODO Step 5 - Add to the Settings Fragment action transition animation (enterAnim, exitAnim, popEnterAnim, popExitAnim)-->
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.academy.nav.ui.details.DetailsFragment"
         android:label="@string/fragment_title_details"
         tools:layout="@layout/fragment_details">
+        <!-- TODO Step 6 - Add to Details fragment an argument of type com.academy.db.model.Movie'-->
         <argument
             android:name="movie"
             app:argType="com.academy.db.model.Movie" />

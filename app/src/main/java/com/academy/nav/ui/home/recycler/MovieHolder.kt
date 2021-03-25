@@ -49,10 +49,12 @@ class MovieHolder(v: View, private val listener: OnMovieClickListener) :
     // View.OnClickListener
     override fun onClick(v: View?) {
         if (adapterPosition != RecyclerView.NO_POSITION) {
-            val extras = FragmentNavigatorExtras(
+            // TODO Step 8 - Uncomment FragmentNavigatorExtras creation and add it as second parameter of onClick().
+            //  Please note you should have 3 parameters in onClick() at the end.
+            /*val extras = FragmentNavigatorExtras(
                 binding.imgMovie to "image_${movie?.id}"
-            )
-            movie?.let { listener.onClick(it, extras, adapterPosition) }
+            )*/
+            movie?.let { listener.onClick(it, adapterPosition) }
         }
     }
 }

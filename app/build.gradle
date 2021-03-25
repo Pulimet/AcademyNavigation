@@ -2,7 +2,9 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt' // For Dagger 2
-    id 'androidx.navigation.safeargs.kotlin' // Navigation Component
+    // TODO Step 2 - Uncomment Navigation Component plugin
+    // TODO Step 3 - Do not forget to SYNC and REBUILD the project.
+    //id 'androidx.navigation.safeargs.kotlin' // Navigation Component
 }
 
 android {

@@ -8,6 +8,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import androidx.transition.TransitionInflater
 import coil.load
+import com.academy.db.model.Movie
 import com.academy.nav.R
 import com.academy.nav.databinding.FragmentDetailsBinding
 import com.academy.nav.di.Injector
@@ -19,7 +20,10 @@ class DetailsFragment : Fragment(R.layout.fragment_details), View.OnClickListene
     internal lateinit var detailsViewModelFactory: DetailsViewModelFactory
     private val viewModel: DetailsViewModel by viewModels { detailsViewModelFactory }
 
-    private val args: DetailsFragmentArgs by navArgs()
+    private var movie: Movie? = null
+    // TODO Step 19 - Remove line 23 and uncommented the line below
+    //private val args: DetailsFragmentArgs by navArgs()
+
     private val binding by FragmentBinding(FragmentDetailsBinding::bind)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,10 +35,17 @@ class DetailsFragment : Fragment(R.layout.fragment_details), View.OnClickListene
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        fillMovieData()
-        ViewCompat.setTransitionName(binding.imgMoviePoster, "image_${args.movie.id}")
+        // TODO Step 20 - To get movie id use: args.movie.id
+        val movieId = requireArguments().getInt("movieId")
+        ViewCompat.setTransitionName(binding.imgMoviePoster, "image_$movieId")
 
-        viewModel.getMovieFromFavorites(args.movie.id).observe(viewLifecycleOwner) {
+        // TODO Step 21 - Instead of 4 lines below just call for fillMovieData(), without arguments.
+        viewModel.getMovie(movieId).observe(viewLifecycleOwner) {
+            this.movie = it
+            fillMovieData()
+        }
+
+        viewModel.getMovieFromFavorites(movieId).observe(viewLifecycleOwner) {
             binding.ivFavorite.setImageResource(getFavoriteResource(it))
         }
         binding.ivFavorite.setOnClickListener(this)
@@ -44,7 +55,8 @@ class DetailsFragment : Fragment(R.layout.fragment_details), View.OnClickListene
         if (isInFavorites) R.drawable.ic_favorite_filled else R.drawable.ic_favorite_border
 
     private fun fillMovieData() {
-        args.movie.let {
+        // TODO Step 22 - Use args.movie instead of movie
+        movie?.let {
             binding.imgMoviePoster.load(it.posterUrl)
             binding.tvTitle.text = it.getTitleWithYear()
             binding.tvDescription.text = it.overview
@@ -53,6 +65,7 @@ class DetailsFragment : Fragment(R.layout.fragment_details), View.OnClickListene
     }
 
     override fun onClick(v: View?) {
-        viewModel.onFavoriteImageClick(args.movie)
+        // TODO Step 23 - Use args.movie instead of movie
+        movie?.let { viewModel.onFavoriteImageClick(it) }
     }
 }

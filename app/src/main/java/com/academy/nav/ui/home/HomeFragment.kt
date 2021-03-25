@@ -85,10 +85,13 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnMovieClickListener {
         }
     }
 
+    // TODO Step 9 - Modify the function signature to override correct onClick() function of OnMovieClickListener interface
     // OnMovieClickListener
-    override fun onClick(movie: Movie, extras: FragmentNavigator.Extras, position: Int) {
+    override fun onClick(movie: Movie, position: Int) {
         viewModel.saveClickedItemPosition(position)
-        navViewModel.onUserMovieClick(movie, extras)
+        // TODO Step 10 - Add extras as a second parameter to onUserMovieClick() function.
+        //  It will be highlighted with red until you complete Step 11
+        navViewModel.onUserMovieClick(movie)
     }
 
     // Menu
