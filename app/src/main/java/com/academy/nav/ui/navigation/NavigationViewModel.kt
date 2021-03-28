@@ -6,8 +6,6 @@ import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.navOptions
 import com.academy.db.model.Movie
 import com.academy.nav.ui.home.HomeFragmentDirections
-import com.academy.nav.ui.settings.SettingsFragment
-import com.academy.nav.ui.settings.SettingsFragmentDirections
 import com.academy.nav.utils.SingleLiveEvent
 
 class NavigationViewModel : ViewModel() {
@@ -40,6 +38,7 @@ class NavigationViewModel : ViewModel() {
     }
 
     fun goToHomeFragmentFromSettings() {
-        navEvent.value = NavParams(SettingsFragmentDirections.actionGlobalHomeFragment())
+        // TODO Step 16 - Uncomment the line below to allow the global navigation to HomeFragment on button click in SettingsFragment
+        //navEvent.value = NavParams(SettingsFragmentDirections.actionGlobalHomeFragment())
     }
 }

@@ -11,6 +11,7 @@ class LoginViewModel : ViewModel() {
 
     private var isLoggedIn = false
 
+    @Suppress("UNUSED_PARAMETER")
     fun login(username: String, password: String) = liveData {
         isLoggedIn = true
         emit(true)

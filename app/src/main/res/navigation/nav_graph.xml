@@ -3,25 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/welcomeFragment">
+    app:startDestination="@id/homeFragment">
 
-    <fragment
-        android:id="@+id/welcomeFragment"
-        android:name="com.academy.nav.ui.welcome.WelcomeFragment"
-        android:label="@string/fragment_title_welcome"
-        tools:layout="@layout/fragment_welcome">
-        <action
-            android:id="@+id/action_welcomeFragment_to_homeFragment"
-            app:destination="@id/homeFragment"
-            app:popUpTo="@id/nav_graph"
-            app:popUpToInclusive="true" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.academy.nav.ui.login.LoginFragment"
-        android:label="@string/fragment_title_login"
-        tools:layout="@layout/fragment_login" />
+    <!--TODO Step 3 - Add WelcomeFragment and mark it as a startDestination-->
+    <!--TODO Step 4 - WelcomeFragment - Use tools:layout with fragment_welcome layout to allow the preview of fragment in Design tab -->
+    <!--TODO Step 5 - WelcomeFragment - Add an action to HomeFragment with popUpToInclusive true and popUpTo="@id/nav_graph"-->
+    <!--TODO Step 6 - Add LoginFragment, do not forget about tools:layout.-->
 
     <fragment
         android:id="@+id/homeFragment"
@@ -41,9 +28,7 @@
         <action
             android:id="@+id/action_homeFragment_to_favoritesFragment"
             app:destination="@id/favoritesFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+        <!--TODO Step 7 - HomeFragment - Add an action to LoginFragment.-->
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
@@ -60,6 +45,7 @@
         android:label="@string/fragment_title_favorites"
         tools:layout="@layout/fragment_favorites" />
 
+    <!--TODO Step 8 - Please note how nested navigation graph created-->
     <navigation
         android:id="@+id/nav_settings"
         app:startDestination="@id/settingsFragment">
@@ -68,17 +54,13 @@
             android:name="com.academy.nav.ui.settings.SettingsFragment"
             android:label="@string/fragment_title_settings"
             tools:layout="@layout/fragment_settings">
-            <action
-                android:id="@+id/action_settingsFragment_to_more_settings"
-                app:destination="@id/more_settings" />
+            <!--TODO Step 10 - Add an action to the new place holder destination 'more_settings' -->
         </fragment>
 
-        <fragment android:id="@+id/more_settings" />
+        <!--TODO Step 9 - Add place holder destination with id: @+id/more_settings -->
 
-        <action
-            android:id="@+id/action_global_homeFragment"
-            app:destination="@id/homeFragment"
-            app:popUpTo="@id/homeFragment"
-            app:popUpToInclusive="true" />
+        <!--TODO Step 11 - Add Global action that point HomeFragment with popUpToInclusive true and popUpTo="@id/homeFragment"
+        After this step please do not forget to rebuild the project. -->
+
     </navigation>
 </navigation>

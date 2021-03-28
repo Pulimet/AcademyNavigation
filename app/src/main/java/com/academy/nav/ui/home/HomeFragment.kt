@@ -8,7 +8,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.FragmentNavigator
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.academy.db.model.Movie
@@ -20,7 +19,6 @@ import com.academy.nav.ui.home.recycler.HomeAdapter
 import com.academy.nav.ui.home.recycler.OnMovieClickListener
 import com.academy.nav.ui.login.LoginViewModel
 import com.academy.nav.ui.navigation.NavigationViewModel
-import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -50,15 +48,16 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnMovieClickListener {
     }
 
     private fun observerLoginStatus() {
-        loginViewModel.user().observe(viewLifecycleOwner) { isUserExist ->
-            if (isUserExist) {
-                setRecyclerView()
-                setSwipeRefreshLayout()
-                observeViewModel()
-            } else {
-                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToLoginFragment())
-            }
+        // TODO Step 14 - Uncomment the lines below to allow the navigation to LoginFragment when user not logged in
+        /*loginViewModel.user().observe(viewLifecycleOwner) { isUserExist ->
+            if (isUserExist) {*/
+        setRecyclerView()
+        setSwipeRefreshLayout()
+        observeViewModel()
+        /*} else {
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToLoginFragment())
         }
+    }*/
     }
 
     private fun setRecyclerView() {

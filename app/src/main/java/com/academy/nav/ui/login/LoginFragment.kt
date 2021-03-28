@@ -10,6 +10,8 @@ import com.academy.nav.databinding.FragmentLoginBinding
 import com.academy.nav.ui.binding.FragmentBinding
 import com.google.android.material.snackbar.Snackbar
 
+// TODO Step 2 - Please note new fragment was added and it used to simulate user login.
+//  This Fragment UI contains only Login button and when user clicks on it we redirect him to the HomeFragment.
 class LoginFragment : Fragment(R.layout.fragment_login), View.OnClickListener {
 
     private val binding by FragmentBinding(FragmentLoginBinding::bind)

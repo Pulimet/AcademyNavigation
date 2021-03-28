@@ -20,12 +20,15 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     private fun setupNavigationUi() {
         navController = findNavController(R.id.fragment_container_view)
-        val appBarConfiguration = AppBarConfiguration(getListOfHomeDestinations())
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration)
+
+        // TODO Step 13 - Uncomment the line with AppBarConfiguration creation and add it as a third argument in setupActionBarWithNavController() function
+        //val appBarConfiguration = AppBarConfiguration(getListOfHomeDestinations())
+        NavigationUI.setupActionBarWithNavController(this, navController)
     }
 
-    private fun getListOfHomeDestinations() =
-        setOf(R.id.welcomeFragment, R.id.loginFragment, R.id.homeFragment)
+    // TODO Step 12 - Uncomment helper funnciton that creates a set with home destinations
+/*    private fun getListOfHomeDestinations() =
+        setOf(R.id.welcomeFragment, R.id.loginFragment, R.id.homeFragment)*/
 
     private fun observeNavigationEvents() {
         navViewModel.getNavEvent().observe(this) {
