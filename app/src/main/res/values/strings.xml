@@ -10,6 +10,8 @@
     <string name="action_favorites">Favorites</string>
 
     <!-- Fragment Titles -->
+    <string name="fragment_title_welcome">Welcome</string>
+    <string name="fragment_title_login">Login</string>
     <string name="fragment_title_home">Home</string>
     <string name="fragment_title_details">Movie Details</string>
     <string name="fragment_title_settings">Settings</string>
@@ -20,6 +22,17 @@
     <string name="minimum_rating">Minimum rating:</string>
     <string name="plus">+</string>
     <string name="minus">-</string>
+    <string name="btn_go_home">Go Home</string>
+
+    <!-- Welcome Fragment-->
+    <string name="btn_go">Go</string>
+
+    <!-- Login Fragment-->
+    <string name="btn_login">Login</string>
+    <string name="error_login_msg">Error, Can\'t login</string>
+
+    <!-- Home Fragment-->
+    <string name="success_login_msg">You are already logged in!</string>
 
     <!-- Unsorted -->
 

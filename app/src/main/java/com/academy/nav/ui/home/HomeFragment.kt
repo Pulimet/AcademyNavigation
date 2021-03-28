@@ -8,6 +8,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.FragmentNavigator
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.academy.db.model.Movie
@@ -17,7 +18,9 @@ import com.academy.nav.di.Injector
 import com.academy.nav.ui.binding.FragmentBinding
 import com.academy.nav.ui.home.recycler.HomeAdapter
 import com.academy.nav.ui.home.recycler.OnMovieClickListener
+import com.academy.nav.ui.login.LoginViewModel
 import com.academy.nav.ui.navigation.NavigationViewModel
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -28,6 +31,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnMovieClickListener {
     private val viewModel: HomeViewModel by viewModels { homeViewModelFactory }
 
     private val navViewModel: NavigationViewModel by activityViewModels()
+    private val loginViewModel: LoginViewModel by activityViewModels()
 
     private val binding by FragmentBinding(FragmentHomeBinding::bind)
 
@@ -42,9 +46,19 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnMovieClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setRecyclerView()
-        setSwipeRefreshLayout()
-        observeViewModel()
+        observerLoginStatus()
+    }
+
+    private fun observerLoginStatus() {
+        loginViewModel.user().observe(viewLifecycleOwner) { isUserExist ->
+            if (isUserExist) {
+                setRecyclerView()
+                setSwipeRefreshLayout()
+                observeViewModel()
+            } else {
+                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToLoginFragment())
+            }
+        }
     }
 
     private fun setRecyclerView() {
@@ -70,6 +84,8 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnMovieClickListener {
             scrollToPreviouslyClickedItem(gridLayoutManager)
             if (it.isNotEmpty()) binding.swipeRefreshLayout.isRefreshing = false
         }
+
+
     }
 
     private fun scrollToPreviouslyClickedItem(layoutManager: RecyclerView.LayoutManager?) {

@@ -6,6 +6,8 @@ import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.navOptions
 import com.academy.db.model.Movie
 import com.academy.nav.ui.home.HomeFragmentDirections
+import com.academy.nav.ui.settings.SettingsFragment
+import com.academy.nav.ui.settings.SettingsFragmentDirections
 import com.academy.nav.utils.SingleLiveEvent
 
 class NavigationViewModel : ViewModel() {
@@ -35,5 +37,9 @@ class NavigationViewModel : ViewModel() {
                 }
             }
         )
+    }
+
+    fun goToHomeFragmentFromSettings() {
+        navEvent.value = NavParams(SettingsFragmentDirections.actionGlobalHomeFragment())
     }
 }

@@ -3,17 +3,20 @@ package com.academy.nav.ui.settings
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import com.academy.nav.R
 import com.academy.nav.databinding.FragmentSettingsBinding
 import com.academy.nav.di.Injector
 import com.academy.nav.ui.binding.FragmentBinding
+import com.academy.nav.ui.navigation.NavigationViewModel
 import javax.inject.Inject
 
 class SettingsFragment : Fragment(R.layout.fragment_settings), View.OnClickListener {
     @Inject
     internal lateinit var settingsViewModelFactory: SettingsViewModelFactory
     private val viewModel: SettingsViewModel by viewModels { settingsViewModelFactory }
+    private val navViewModel: NavigationViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +29,7 @@ class SettingsFragment : Fragment(R.layout.fragment_settings), View.OnClickListe
         super.onViewCreated(view, savedInstanceState)
         observeViewModel()
         binding.apply {
-            setOnClickListenerForViews(btnMinusVotes, btnPlusVotes, btnMinusRating, btnPlusRating)
+            setOnClickListenerForViews(btnMinusVotes, btnPlusVotes, btnMinusRating, btnPlusRating, btnGoHome)
         }
     }
 
@@ -52,6 +55,7 @@ class SettingsFragment : Fragment(R.layout.fragment_settings), View.OnClickListe
             R.id.btnPlusVotes -> viewModel.onBtnPlusVotesNumClick()
             R.id.btnMinusRating -> viewModel.onBtnMinusRatingClick()
             R.id.btnPlusRating -> viewModel.onBtnPlusRatingClick()
+            R.id.btnGoHome -> navViewModel.goToHomeFragmentFromSettings()
         }
     }
 }
