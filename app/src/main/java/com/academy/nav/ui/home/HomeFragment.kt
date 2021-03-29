@@ -112,7 +112,10 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnMovieClickListener {
         super.onCreateOptionsMenu(menu, inflater)
     }
 
+//    TODO 19 - Update this method to work with navController
     override fun onOptionsItemSelected(item: MenuItem) =
+        //Replace the <when> statement with the following code:
+        // item.onNavDestinationSelected(findNavController()) || super.onOptionsItemSelected(item)
         when (item.itemId) {
             R.id.action_settings -> {
                 viewModel.saveFirstVisiblePosition(gridLayoutManager?.findFirstVisibleItemPosition())

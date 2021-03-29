@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--   TODO 17 - Change id of this action to match nav destination: nav_settings -->
     <item
         android:id="@+id/action_settings"
         android:icon="@drawable/ic_settings"
         android:title="@string/action_settings"
         app:showAsAction="always" />
 
+    <!--    TODO 18 - Change id of this to match nav destination: favoritesFragment -->
     <item
         android:id="@+id/action_favorites"
         android:icon="@drawable/ic_favorite_filled"

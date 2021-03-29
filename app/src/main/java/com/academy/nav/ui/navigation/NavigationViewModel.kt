@@ -19,10 +19,12 @@ class NavigationViewModel : ViewModel() {
             NavParams(HomeFragmentDirections.actionHomeFragmentToDetailsFragment(movie), extras)
     }
 
+    // TODO 20 - Remove this method
     fun onSettingsClick() {
         navEvent.value = NavParams(HomeFragmentDirections.actionHomeFragmentToSettingsFragment())
     }
 
+    // TODO 21 - Remove this method
     fun onFavoritesClick() {
         navEvent.value = NavParams(
             HomeFragmentDirections.actionHomeFragmentToFavoritesFragment(),
