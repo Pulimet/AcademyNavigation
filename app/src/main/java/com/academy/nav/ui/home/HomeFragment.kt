@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.onNavDestinationSelected
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.academy.db.model.Movie
@@ -113,18 +114,5 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnMovieClickListener {
         super.onCreateOptionsMenu(menu, inflater)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem) =
-        when (item.itemId) {
-            R.id.action_settings -> {
-                viewModel.saveFirstVisiblePosition(gridLayoutManager?.findFirstVisibleItemPosition())
-                navViewModel.onSettingsClick()
-                true
-            }
-            R.id.action_favorites -> {
-                navViewModel.onFavoritesClick()
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-
+    override fun onOptionsItemSelected(item: MenuItem) = item.onNavDestinationSelected(findNavController()) || super.onOptionsItemSelected(item)
 }

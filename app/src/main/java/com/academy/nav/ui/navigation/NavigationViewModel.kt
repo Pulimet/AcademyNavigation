@@ -21,23 +21,23 @@ class NavigationViewModel : ViewModel() {
             NavParams(HomeFragmentDirections.actionHomeFragmentToDetailsFragment(movie), extras)
     }
 
-    fun onSettingsClick() {
-        navEvent.value = NavParams(HomeFragmentDirections.actionHomeFragmentToSettingsFragment())
-    }
+//    fun onSettingsClick() {
+//        navEvent.value = NavParams(HomeFragmentDirections.actionHomeFragmentToSettingsFragment())
+//    }
 
-    fun onFavoritesClick() {
-        navEvent.value = NavParams(
-            HomeFragmentDirections.actionHomeFragmentToFavoritesFragment(),
-            navOptions = navOptions {
-                anim {
-                    enter = android.R.animator.fade_in
-                    exit = android.R.animator.fade_out
-                    popEnter = android.R.animator.fade_in
-                    popExit = android.R.animator.fade_out
-                }
-            }
-        )
-    }
+//    fun onFavoritesClick() {
+//        navEvent.value = NavParams(
+//            HomeFragmentDirections.actionHomeFragmentToFavoritesFragment(),
+//            navOptions = navOptions {
+//                anim {
+//                    enter = android.R.animator.fade_in
+//                    exit = android.R.animator.fade_out
+//                    popEnter = android.R.animator.fade_in
+//                    popExit = android.R.animator.fade_out
+//                }
+//            }
+//        )
+//    }
 
     fun goToHomeFragmentFromSettings() {
         navEvent.value = NavParams(SettingsFragmentDirections.actionGlobalHomeFragment())
