@@ -5,16 +5,10 @@
     android:id="@+id/favorites_nav_graph"
     app:startDestination="@id/favoritesFragment">
 
-<!--    TODO 6 - Explore this new navigation graph in the Favorites module,
-Notice it's id(favorites_nav_graph), it should match the id we defined in the nav_ids.xml
-in the navigation module-->
-<!--    TODO 7 - Use the + button in the editor and add the Favorites fragment-->
+
     <fragment
         android:id="@+id/favoritesFragment"
         android:name="com.academy.ui_favorites.FavoritesFragment"
         android:label="fragment_favorites"
         tools:layout="@layout/fragment_favorites" />
-
-<!--    TODO 8 - Note that it automatically marked as the startDestination-->
-
 </navigation>

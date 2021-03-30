@@ -7,13 +7,10 @@
         android:title="@string/action_settings"
         app:showAsAction="always" />
 
-<!--    TODO 13 - replace the id of this action with the id of the GlobalAction we've defined in Todo11-->
-<!--    android:id="@+id/action_global_favorites"-->
     <item
-        android:id="@+id/favoritesFragment"
+        android:id="@+id/action_global_favorites"
         android:icon="@drawable/ic_favorite_filled"
         android:title="@string/action_favorites"
         app:showAsAction="always" />
 
-<!--    TODO 14 - Rebuild the project and run the app! -->
 </menu>

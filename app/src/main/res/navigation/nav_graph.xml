@@ -39,10 +39,6 @@
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
 
-<!--    TODO 10 - Delete the action_homeFragment_to_favoritesFragment homeFragment_to-->
-        <action
-            android:id="@+id/action_homeFragment_to_favoritesFragment"
-            app:destination="@id/favoritesFragment" />
         <action
             android:id="@+id/action_homeFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
@@ -56,25 +52,11 @@
             android:name="movie"
             app:argType="com.academy.db.model.Movie" />
     </fragment>
-    <fragment
-        android:id="@+id/favoritesFragment"
-        android:name="com.academy.ui_favorites.FavoritesFragment"
-        android:label="@string/fragment_title_favorites"
-        tools:layout="@layout/fragment_favorites" />
 
-<!--    TODO 9 - Delete the favoritesFragment destination (we moved to the favorites module graph right?)-->
+    <include app:graph = "@navigation/favorites_nav_graph"/>
 
-<!--    TODO 10 - Uncomment the following block to include a reference to the favorites_nav_graph-->
-<!--    <include app:graph = "@navigation/favorites_nav_graph"/>-->
-
-<!--    TODO 11 - Uncomment the following block to create a global action which navigates to the favorites nested graph-->
-<!--    <action android:id="@+id/action_global_favorites"-->
-<!--        app:destination="@id/favorites_nav_graph"/>-->
-
-<!--    TODO 11.1 - notice for the little arrow appears to the left of the nested graph in the editor-->
-<!--    TODO 11.2 - Run the app, at the home screen click on the Favorites action, surprise!! it doesn't working! That's totally fine!-->
-
-<!--    TODO 12 - A Quiz!! Where should we use the new globalAction we defined in todo11? Goto todo13 and find out!!-->
+    <action android:id="@+id/action_global_favorites"
+        app:destination="@id/favorites_nav_graph"/>
 
     <navigation
         android:id="@+id/nav_settings"
