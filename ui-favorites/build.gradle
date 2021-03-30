@@ -63,6 +63,8 @@ dependencies {
 
     // DI - Dagger 2
     implementation "com.google.dagger:dagger:$dagger2_version"
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.4'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.4'
     kapt "com.google.dagger:dagger-compiler:$dagger2_version"
 
     // Tests

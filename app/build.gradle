@@ -41,6 +41,10 @@ dependencies {
     // Modules dependencies
     implementation project(path: ':db')
     implementation project(path: ':ui-favorites')
+    implementation project(path: ':navigation')
+    //TODO 2 - Add new implementation for :navigation module
+    //TODO 3 - Sync gradle and rebuild project
+    //TODO 4 - Look for the new nav_ids.xml in the res directory
 
     // Kotlin
     //noinspection DifferentStdlibGradleVersion

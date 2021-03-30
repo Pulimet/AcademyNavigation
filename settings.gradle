@@ -1,2 +1,4 @@
 include ':app', ':network', ':db', ':ui-favorites'
 rootProject.name = "Academy Navigation"
+// TODO 1 - Uncomment include for :navigation module
+include ':navigation'
