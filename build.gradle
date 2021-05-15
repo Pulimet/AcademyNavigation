@@ -9,7 +9,7 @@ buildscript {
         room_version = '2.3.0'
         coroutines_version = "1.4.2"
         lifecycle_version = '2.3.1'
-        dagger2_version = '2.33'
+        dagger2_version = '2.34'
     }
     repositories {
         google()
