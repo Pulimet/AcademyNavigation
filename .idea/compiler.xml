@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="1.8" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="Academy_Navigation.app" target="11" />
+      <module name="Academy_Navigation.db" target="11" />
+      <module name="Academy_Navigation.navigation" target="11" />
+      <module name="Academy_Navigation.ui-favorites" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
